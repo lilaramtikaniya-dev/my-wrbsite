@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import dotenv from 'dotenv';
 import helmet from 'helmet';
 import morgan from 'morgan';
@@ -30,7 +30,7 @@ app.use('/health', healthRouter);
 app.use('/api/run', runRouter);
 app.use('/api/leaderboard', leaderboardRouter);
 
-app.get('/', (_req, res) => {
+app.get('/', (_req: Request, res: Response) => {
   res.json({
     name: 'JSForge Runtime API',
     version: '1.0.0',
@@ -39,7 +39,7 @@ app.get('/', (_req, res) => {
   });
 });
 
-app.use((_req, res) => {
+app.use((_req: Request, res: Response) => {
   res.status(404).json({ error: 'Not Found', message: 'Endpoint does not exist.' });
 });
 

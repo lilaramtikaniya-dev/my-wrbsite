@@ -19,7 +19,7 @@ const COLORS = ['#00d4ff', '#8b5cf6', '#f0abfc', '#00ff88']
 export function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const particlesRef = useRef<Particle[]>([])
-  const animRef = useRef<number>()
+  const animRef = useRef<number | null>(null)
 
   useEffect(() => {
     const canvas = canvasRef.current

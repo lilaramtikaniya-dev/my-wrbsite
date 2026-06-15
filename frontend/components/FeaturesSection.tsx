@@ -1,47 +1,46 @@
 'use client'
 
 import { FeatureCard } from '@/components/FeatureCard'
-import { Hash, GitBranch, Code2, Cpu, Database, Zap } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const features = [
   {
-    icon: Hash,
+    icon: 'Hash' as const,
     title: 'Lexer & Tokenizer',
     description: 'Scans source code character by character, producing a stream of tokens — keywords, identifiers, operators, and literals.',
     color: 'blue' as const,
     code: 'let x = 42; → [LET, IDENT, EQ, NUM, SEMI]',
   },
   {
-    icon: GitBranch,
+    icon: 'GitBranch' as const,
     title: 'Recursive Descent Parser',
     description: 'Transforms the token stream into an Abstract Syntax Tree (AST) using a hand-written recursive descent parser.',
     color: 'purple' as const,
     code: 'Tokens → AST { type: "VarDecl", ... }',
   },
   {
-    icon: Code2,
+    icon: 'CodeXml' as const,
     title: 'AST Engine',
     description: 'A typed AST with 30+ node types covering declarations, expressions, statements, and control flow.',
     color: 'pink' as const,
     code: 'BinaryExpr | CallExpr | IfStmt | ForLoop',
   },
   {
-    icon: Cpu,
+    icon: 'Cpu' as const,
     title: 'Tree-Walking Interpreter',
     description: 'Evaluates AST nodes recursively with proper scoping, closures, and dynamic dispatch for all JS constructs.',
     color: 'green' as const,
     code: 'eval(node) → Value | Exception',
   },
   {
-    icon: Database,
+    icon: 'Database' as const,
     title: 'Memory Model',
     description: 'Stack-based scope management with environment chaining. Functions create new scopes that close over their parent.',
     color: 'yellow' as const,
     code: 'Scope { parent, bindings: Map<string, Value> }',
   },
   {
-    icon: Zap,
+    icon: 'Zap' as const,
     title: 'Standard Library',
     description: 'Built-in Math, Date, Array (map/filter/reduce/find/every/some), String methods, and console.log support.',
     color: 'orange' as const,

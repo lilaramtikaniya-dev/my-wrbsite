@@ -7,7 +7,7 @@ const allowedOrigins = [
 ].filter(Boolean) as string[];
 
 export const corsMiddleware = cors({
-  origin: (origin, callback) => {
+  origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => {
     // Allow requests with no origin (mobile apps, curl, etc.)
     if (!origin) return callback(null, true);
 

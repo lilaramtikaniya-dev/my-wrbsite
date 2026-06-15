@@ -1,7 +1,10 @@
 import Link from 'next/link'
 import { Zap, Github, Twitter, ExternalLink } from 'lucide-react'
 
-const links = {
+
+type NavLink = { label: string; href: string; external?: boolean }
+
+const links: Record<string, NavLink[]> = {
   product: [
     { label: 'Playground', href: '/playground' },
     { label: 'Documentation', href: '/docs' },
@@ -20,6 +23,7 @@ const links = {
     { label: 'Roadmap', href: '/about#roadmap' },
   ],
 }
+
 
 export function Footer() {
   return (
